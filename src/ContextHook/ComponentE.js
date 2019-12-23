@@ -1,6 +1,6 @@
 import React,{useContext} from 'react';
 import ComponentF from './ComponentF';
-import {UserContext,UserData} from './App';
+import {UserContext,UserData} from './MainContext';
 
 export default function ComponentE() {
     const firstContext = useContext(UserContext);

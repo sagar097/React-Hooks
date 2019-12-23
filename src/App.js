@@ -1,31 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 import './App.css';
-import ComponentC from './ComponentC';
-import CounterOne from './CounterOne';
+import MainContext from './ContextHook/MainContext';
+import CounterOne from './ReducerHook/CounterOne';
 import Main from './GlobalStateUsingReducer&Context/Main';
-import Datafetch from './Datafetch';
-import Datafetch2 from './Datafetch2';
-export const UserContext = React.createContext();
-export const UserData = React.createContext();
+import Datafetch from './UseEffect/Datafetch';
+import CustomNavbar from './CustomNavbar';
+import Home from './Home';
+
 
 function App() {
   return (
+    <Router>
     <div className="App">
-    
-      <UserContext.Provider value={'First_Context_Data'}>
-        <UserData.Provider value={'Second_Context_Data'}>
-          <ComponentC/>
-        </UserData.Provider>  
-      </UserContext.Provider>
+        <CustomNavbar/>
+
+       <Route exact path="/"  component={Home}/>
+       <Route path="/ContextHook"  component={MainContext}/>
+       <Route path="/ReducerHook"  component={CounterOne}/>
+       <Route path="/EffectHook"  component={Datafetch}/>
+       <Route path="/GlobalContextReducer" component={Main}/>
+      {/* <MainContext/>             
       <CounterOne/>
-      Global State Management Using useReducer and useContext:
+      
       <Main/>
      <b><h1> DataFetching Using useState and useEffect:</h1></b>
       <Datafetch/>
       <b><h1>DataFetching Using useReducer and useEffect:</h1></b>
-      <Datafetch2/>
+      <Datafetch2/> */}
     </div>
+    </Router>
   );
 }
 

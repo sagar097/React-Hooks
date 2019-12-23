@@ -1,5 +1,5 @@
 import React from 'react'
-import { UserContext, UserData } from './App'
+import { UserContext, UserData } from './MainContext'
 export default function ComponentF() {
     return (
         <div>
@@ -8,7 +8,7 @@ export default function ComponentF() {
                     user => {
                         return (<UserData.Consumer>
                             {contextData => {
-                                return <div>Data From UserContext is: {user}  Data from Second contextData is:{contextData}</div>
+                                return <div>Data From UserContext is: {user} <br/> Data from Second contextData is:{contextData}</div>
                             }
                             }
                         </UserData.Consumer>)

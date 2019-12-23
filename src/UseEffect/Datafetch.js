@@ -19,10 +19,13 @@ function Datafetch() {
     },[])
     
     return (
+        <React.Fragment>
+        <b><h1> DataFetching Using useState and useEffect:</h1></b>
         <ul>
         {loading?'...Loading':posts&&posts.map(post=>(<li key={post.id}>{post.title}</li>))}
         {error?error:null}            
         </ul>
+        </React.Fragment>
     )
 }
 
